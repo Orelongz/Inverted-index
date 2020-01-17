@@ -1,0 +1,83 @@
+{
+  "this": [
+    "test/sample_2.txt",
+    "test/sample_1.txt"
+  ],
+  "is": [
+    "test/sample_2.txt",
+    "test/sample_1.txt"
+  ],
+  "another": [
+    "test/sample_2.txt"
+  ],
+  "test": [
+    "test/sample_2.txt",
+    "test/sample_1.txt"
+  ],
+  "file": [
+    "test/sample_2.txt",
+    "test/sample_1.txt"
+  ],
+  "Again": [
+    "test/sample_2.txt"
+  ],
+  "a": [
+    "test/sample_2.txt",
+    "test/sample_1.txt"
+  ],
+  "learning": [
+    "test/sample_2.txt"
+  ],
+  "experience": [
+    "test/sample_2.txt"
+  ],
+  "of": [
+    "test/sample_2.txt"
+  ],
+  "me": [
+    "test/sample_2.txt"
+  ],
+  "trying": [
+    "test/sample_2.txt"
+  ],
+  "out": [
+    "test/sample_2.txt",
+    "test/sample_1.txt"
+  ],
+  "how": [
+    "test/sample_2.txt"
+  ],
+  "to": [
+    "test/sample_2.txt",
+    "test/sample_1.txt"
+  ],
+  "implement": [
+    "test/sample_2.txt"
+  ],
+  "inverted": [
+    "test/sample_2.txt",
+    "test/sample_1.txt"
+  ],
+  "index": [
+    "test/sample_2.txt",
+    "test/sample_1.txt"
+  ],
+  "sample": [
+    "test/sample_1.txt"
+  ],
+  "that": [
+    "test/sample_1.txt"
+  ],
+  "meant": [
+    "test/sample_1.txt"
+  ],
+  "help": [
+    "test/sample_1.txt"
+  ],
+  "the": [
+    "test/sample_1.txt"
+  ],
+  "implementation": [
+    "test/sample_1.txt"
+  ]
+}

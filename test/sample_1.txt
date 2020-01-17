@@ -1,0 +1,4 @@
+this is a sample file that is meant to help
+test out the inverted index implementation
+
+
