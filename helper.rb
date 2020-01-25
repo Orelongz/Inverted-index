@@ -1,3 +1,5 @@
+require 'json'
+
 module Helper
   def self.included(base)
     base.extend(ClassMethods)
@@ -16,9 +18,10 @@ module Helper
     end
 
     def start
-      directory = path_to_directory
-      output_file = name_of_output_file
-      new(directory, output_file).index_records
+      # directory = path_to_directory
+      # output_file = name_of_output_file
+      # new(directory, output_file).index_records
+      new.index_records
     end
 
     def name_of_output_file
@@ -58,7 +61,9 @@ module Helper
     end
   end
 
-  module InstanceMethods  
+  module InstanceMethods
+    STOP_WORDS = ['a', 'of', 'the', 'to', 'is']
+
     def file_exists?(filename)
       self.class.file_exists?(filename)
     end
@@ -73,10 +78,27 @@ module Helper
       end
     end
 
+    def parse_json(file)
+      JSON.parse(
+        File.read(file),
+        {:symbolize_names => true}
+      ) 
+    end
+
+    def parse_file(file_with_index)
+      # file_exists?(file_with_index) ? parse_json(file_with_index) : default_index_structure
+      default_index_structure
+    end
+
     def sanitize_sentence(sentence)
+      # TODO: Remove stop words from sentence
       sentence.split.each do |word|
         word.gsub!(/\W/, '')
       end
+    end
+
+    def tokenize(sentence)
+      sanitize_sentence(sentence.downcase).sort
     end
 
     def open_directory(directory)
@@ -88,8 +110,35 @@ module Helper
           puts "Kindly switch to a newer version of Ruby"
         else
           puts "An error occured and program failed to run properly"
+          raise e
         end
       end
     end
+
+    def default_token_structure
+      {
+        frequency: 0,
+        documents: []
+      }
+    end
+
+    def default_index_structure
+      { result: {} }
+    end
+
+    def previously_indexed?(data, word)
+      data[:result][word][:frequency] > 0
+    end
+
+    def document_index(documents, document)
+      documents.find_index { |doc| doc[:id] == document[:id] }
+    end
+  end
+end
+
+class String
+  # https://stackoverflow.com/questions/43329481/find-all-indices-of-a-substring-within-a-string
+  def find_all_indices(string)
+    self.enum_for(:scan, /(?=#{string})/).map { Regexp.last_match.offset(0).first }
   end
 end

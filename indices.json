@@ -1,83 +1,403 @@
 {
-  "this": [
-    "test/sample_2.txt",
-    "test/sample_1.txt"
-  ],
-  "is": [
-    "test/sample_2.txt",
-    "test/sample_1.txt"
-  ],
-  "another": [
-    "test/sample_2.txt"
-  ],
-  "test": [
-    "test/sample_2.txt",
-    "test/sample_1.txt"
-  ],
-  "file": [
-    "test/sample_2.txt",
-    "test/sample_1.txt"
-  ],
-  "Again": [
-    "test/sample_2.txt"
-  ],
-  "a": [
-    "test/sample_2.txt",
-    "test/sample_1.txt"
-  ],
-  "learning": [
-    "test/sample_2.txt"
-  ],
-  "experience": [
-    "test/sample_2.txt"
-  ],
-  "of": [
-    "test/sample_2.txt"
-  ],
-  "me": [
-    "test/sample_2.txt"
-  ],
-  "trying": [
-    "test/sample_2.txt"
-  ],
-  "out": [
-    "test/sample_2.txt",
-    "test/sample_1.txt"
-  ],
-  "how": [
-    "test/sample_2.txt"
-  ],
-  "to": [
-    "test/sample_2.txt",
-    "test/sample_1.txt"
-  ],
-  "implement": [
-    "test/sample_2.txt"
-  ],
-  "inverted": [
-    "test/sample_2.txt",
-    "test/sample_1.txt"
-  ],
-  "index": [
-    "test/sample_2.txt",
-    "test/sample_1.txt"
-  ],
-  "sample": [
-    "test/sample_1.txt"
-  ],
-  "that": [
-    "test/sample_1.txt"
-  ],
-  "meant": [
-    "test/sample_1.txt"
-  ],
-  "help": [
-    "test/sample_1.txt"
-  ],
-  "the": [
-    "test/sample_1.txt"
-  ],
-  "implementation": [
-    "test/sample_1.txt"
-  ]
+  "result": {
+    "another": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            8
+          ]
+        }
+      ]
+    },
+    "file": {
+      "frequency": 2,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            21
+          ]
+        },
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            17
+          ]
+        }
+      ]
+    },
+    "is": {
+      "frequency": 10,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            2,
+            5,
+            35,
+            38
+          ]
+        },
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            2,
+            5,
+            27,
+            2,
+            5,
+            27
+          ]
+        }
+      ]
+    },
+    "test": {
+      "frequency": 2,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            16
+          ]
+        },
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            0
+          ]
+        }
+      ]
+    },
+    "this": {
+      "frequency": 3,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            0,
+            33
+          ]
+        },
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            0
+          ]
+        }
+      ]
+    },
+    "a": {
+      "frequency": 7,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            2,
+            14,
+            18
+          ]
+        },
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            8,
+            11,
+            24,
+            32
+          ]
+        }
+      ]
+    },
+    "again": {
+      "frequency": 0,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+
+          ]
+        }
+      ]
+    },
+    "experience": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            25
+          ]
+        }
+      ]
+    },
+    "learning": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            16
+          ]
+        }
+      ]
+    },
+    "of": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            36
+          ]
+        }
+      ]
+    },
+    "how": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            14
+          ]
+        }
+      ]
+    },
+    "implement": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            21
+          ]
+        }
+      ]
+    },
+    "index": {
+      "frequency": 2,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            40
+          ]
+        },
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            22
+          ]
+        }
+      ]
+    },
+    "inverted": {
+      "frequency": 2,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            31
+          ]
+        },
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            13
+          ]
+        }
+      ]
+    },
+    "me": {
+      "frequency": 2,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            0,
+            26
+          ]
+        }
+      ]
+    },
+    "out": {
+      "frequency": 2,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            10
+          ]
+        },
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            5
+          ]
+        }
+      ]
+    },
+    "to": {
+      "frequency": 2,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            18
+          ]
+        },
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            36
+          ]
+        }
+      ]
+    },
+    "trying": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 1,
+          "filename": "sample_2.txt",
+          "file_path": "test/sample_2.txt",
+          "positions": [
+            3
+          ]
+        }
+      ]
+    },
+    "help": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            39
+          ]
+        }
+      ]
+    },
+    "meant": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            30
+          ]
+        }
+      ]
+    },
+    "sample": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            10
+          ]
+        }
+      ]
+    },
+    "that": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            22
+          ]
+        }
+      ]
+    },
+    "implementation": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            28
+          ]
+        }
+      ]
+    },
+    "the": {
+      "frequency": 1,
+      "documents": [
+        {
+          "id": 2,
+          "filename": "sample_1.txt",
+          "file_path": "test/sample_1.txt",
+          "positions": [
+            9
+          ]
+        }
+      ]
+    }
+  }
 }
