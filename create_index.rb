@@ -2,7 +2,7 @@ require_relative './helper'
 require_relative './document'
 require 'pry'
 
-class Index
+class CreateIndex
   include Helper
 
   def initialize(directory = nil, file_with_index = nil)
@@ -10,7 +10,7 @@ class Index
     # and instance variable will not be set properly
     @directory = directory || "test"
     @file_with_index = file_with_index || "indices.json"
-    @data = parse_file(@file_with_index)
+    @data = parse_file(@file_with_index, :create)
   end
 
   def index_records
@@ -24,7 +24,7 @@ class Index
   end
 
   def create_index(file, document)
-    @file_pointer = 0
+    @file_pointer = 1
 
     file.each do |sentence|
       tokenize(sentence).each { |word| build_token(word, sentence, document) }
@@ -39,28 +39,19 @@ class Index
   end
 
   def update_indexed_token(word, sentence, document)
-    
-    if previously_indexed?(@data, word)
-      documents = @data[:result][word][:documents]
-      positions = document.get_positions(word, sentence, @file_pointer)
-      if doc_index = document_index(documents, document.to_s)
-        documents[doc_index][:positions] += positions
-      else
-        documents << document.index_word(word, sentence)
-      end
+    documents = @data[:result][word][:documents] || []
+    positions = document.get_positions(word, sentence, @file_pointer)
+
+    if previously_indexed?(@data, word) && doc_index = document_index(documents, document.to_s)
+      documents[doc_index][:positions] += positions
     else
-      documents = []
-      documents << document.index_word(word, sentence)
+      documents << document.to_s.merge({ positions: positions })
     end
     
     @data[:result][word][:documents] = documents
     @data[:result][word][:frequency] = calc_frequency(documents)
   end
-
-  def calc_frequency(documents)
-    documents.reduce(0) { |total, doc| total + doc[:positions].length }
-  end
 end
 
 # start the index
-Index.start
+CreateIndex.start

@@ -4,7 +4,8 @@ This is my go at trying to make a minimal implementation of the inverted index u
 
 Steps to run;
 
-1. run `ruby inverted_index.rb`
+1. run `ruby create_index.rb`
+1. run `ruby search_index.rb`
 
 2. Answer the questions from the prompt when indexing. present format is;
   a. provide path to directory to index (optional)

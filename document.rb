@@ -35,10 +35,6 @@ class Document
     end
   end
 
-  def index_word(word, sentence)
-    to_s.merge({ positions: get_positions(word, sentence) })
-  end
-
   def to_s
     {
       id: @id,

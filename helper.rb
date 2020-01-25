@@ -18,10 +18,9 @@ module Helper
     end
 
     def start
-      # directory = path_to_directory
-      # output_file = name_of_output_file
-      # new(directory, output_file).index_records
-      new.index_records
+      directory = path_to_directory
+      output_file = name_of_output_file
+      new(directory, output_file).index_records
     end
 
     def name_of_output_file
@@ -73,7 +72,7 @@ module Helper
     end
 
     def write_to_file(filename, data)
-      File.open(filename, "w") do |file|
+      File.open(filename, "w+") do |file|
         file.write(JSON.pretty_generate(data))
       end
     end
@@ -85,9 +84,13 @@ module Helper
       ) 
     end
 
-    def parse_file(file_with_index)
-      # file_exists?(file_with_index) ? parse_json(file_with_index) : default_index_structure
-      default_index_structure
+    def parse_file(file_with_index, type)
+      case type
+      when :create
+        default_index_structure
+      when :search
+        file_exists?(file_with_index) ? parse_json(file_with_index) : default_index_structure
+      end
     end
 
     def sanitize_sentence(sentence)
@@ -98,7 +101,7 @@ module Helper
     end
 
     def tokenize(sentence)
-      sanitize_sentence(sentence.downcase).sort
+      sanitize_sentence(sentence.downcase).sort.uniq
     end
 
     def open_directory(directory)
@@ -132,6 +135,10 @@ module Helper
 
     def document_index(documents, document)
       documents.find_index { |doc| doc[:id] == document[:id] }
+    end
+
+    def calc_frequency(documents)
+      documents.reduce(0) { |total, doc| total + doc[:positions].length }
     end
   end
 end
